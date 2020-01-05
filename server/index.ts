@@ -42,6 +42,7 @@ export default class Server {
     private escucharSockets() {
         this.io.on('connect', (cliente: Socket) => {
             console.log('cliente conectado');
+            SocketService.mensaje(cliente,this.io);
             SocketService.disconnect( cliente );
         });
     }
